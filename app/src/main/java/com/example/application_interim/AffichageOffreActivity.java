@@ -15,4 +15,5 @@ public class AffichageOffreActivity extends AppCompatActivity {
     }
 
 
+
 }

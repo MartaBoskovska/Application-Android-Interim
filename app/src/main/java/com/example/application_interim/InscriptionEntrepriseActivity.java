@@ -12,6 +12,7 @@ import java.util.Calendar;
 
 public class InscriptionEntrepriseActivity extends AppCompatActivity {
     EditText dateNaissanceEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
