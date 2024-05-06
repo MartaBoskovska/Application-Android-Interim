@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/couleur_fond_main"
+    android:layout_height="match_parent">
+
+    <!-- Logo ImageView -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
+        android:src="@drawable/logo1" />
+
+
+    <TextView
+        android:id="@+id/text_seconnecter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_seconnecter"
+        android:textColor="#4a4d54"
+        android:textSize="24sp"
+        android:layout_below="@id/logoImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+
+    <!-- Champ de texte pour le nom d'utilisateur -->
+    <LinearLayout
+        android:id="@+id/layoutconnexion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImageView"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/edit_text_background"
+            android:hint="Nom de l'entreprise"
+            android:padding="13dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <!-- Champ de texte pour le mot de passe -->
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usernameEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/edit_text_background"
+            android:hint="Mot de passe"
+            android:inputType="textPassword"
+            android:padding="13dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/connectButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="90dp"
+            android:backgroundTint="#02C37e"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/layoutconnexion"
+            android:text="Se connecter"/>
+
+        <TextView
+            android:id="@+id/text_inscription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_inscription"
+            android:textColor="#4a4d54"
+            android:textSize="24sp"
+            android:layout_below="@id/connectButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            />
+
+
+
+
+</RelativeLayout>

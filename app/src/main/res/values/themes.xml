@@ -4,6 +4,13 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+    <style name="CustomDatePickerDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <!-- Modifier les couleurs selon vos préférences -->
+        <item name="colorPrimary">#4a4d54</item>
+        <item name="colorPrimaryDark">#02C37e</item>
+        <item name="colorAccent">#02C37e</item>
+    </style>
+
 
     <style name="Theme.ApplicationInterim" parent="Base.Theme.ApplicationInterim" />
 </resources>

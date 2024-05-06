@@ -1,15 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/couleur_fond_main"
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/inscriptionButton"
+    <!-- Logo en haut -->
+
+    <ImageView
+        android:id="@+id/logoApplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Inscription Candidat"
-        android:layout_marginTop="16dp"
+        android:src="@drawable/logo1"
         android:layout_centerHorizontal="true"
-        android:onClick="onInscriptionButtonClick"/>
+        android:layout_marginTop="32dp"/>
+
+    <!-- Zone de texte au milieu -->
+
+    <ImageView
+        android:id="@+id/ImageTexteAcceuil"
+        android:layout_below="@id/logoApplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/acceuil"
+        android:layout_centerHorizontal="true"
+       />
+
+    <TextView
+        android:id="@+id/texteContinuer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_continuer"
+        android:textColor="#02C37e"
+        android:layout_above="@id/button1"
+        android:textStyle="italic"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+       />
+
+
+
+
+    <!-- Bouton utilisateur -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bouton_utilisateur"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#02C37e"
+        android:textColor="#4a4d54"
+
+        android:layout_margin="16dp"/>
+
+
+
+    <!-- Bouton  anonyme -->
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bouton_anonyme"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#02C37e"
+        android:textColor="#4a4d54"
+        android:layout_margin="16dp"/>
+
+    <!-- Bouton entreprise -->
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bouton_entreprise"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#02C37e"
+        android:textColor="#4a4d54"
+        android:layout_margin="16dp"/>
 
 </RelativeLayout>

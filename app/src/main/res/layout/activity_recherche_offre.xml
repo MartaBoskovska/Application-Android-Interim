@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/couleur_fond_main"
+    tools:context=".RechercheOffreActivity">
+
+    <!-- Bouton Menu -->
+    <Button
+        android:id="@+id/btn_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bouton_menu"
+        android:backgroundTint="#02C37e"
+        android:textColor="#4a4d54"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Image en dessous du bouton Menu -->
+    <ImageView
+        android:id="@+id/image_offre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo2"
+        android:layout_below="@id/btn_menu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Texte "Trouver job" en dessous de l'image -->
+    <TextView
+        android:id="@+id/text_trouver_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_trouver_job"
+        android:textColor="#02C37e"
+        android:textSize="24sp"
+        android:layout_below="@id/image_offre"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Spinner et EditText pour "Où ?" en dessous du texte "Trouver job" -->
+    <LinearLayout
+        android:id="@+id/layout_spinner_edittext_quoi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/text_trouver_job"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp">
+
+        <!-- Spinner pour le lieu -->
+
+
+
+        <!-- EditText pour le lieu -->
+        <EditText
+            android:id="@+id/edit_text_quoi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Quoi ?"
+            android:minHeight="48dp"
+            android:layout_marginStart="8dp"
+            android:inputType="text"/>
+
+        <Spinner
+            android:id="@+id/spinner_quoi"
+            android:layout_width="wrap_content"
+            android:minHeight="48dp"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_spinner_edittext_lieu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/layout_spinner_edittext_quoi"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp">
+
+        <!-- Spinner pour le lieu -->
+
+
+        <!-- EditText pour le lieu -->
+        <EditText
+            android:id="@+id/edit_text_lieu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Où ?"
+            android:minHeight="48dp"
+            android:layout_marginStart="8dp"
+            android:inputType="text"/>
+
+        <Spinner
+            android:id="@+id/spinner_lieu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:spinnerMode="dropdown"/>
+    </LinearLayout>
+
+    <EditText
+
+        android:id="@+id/edit_text_quand"
+
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:hint="Quand ?"
+        android:minHeight="48dp"
+        android:layout_below="@id/layout_spinner_edittext_lieu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="30dp"
+
+        android:inputType="none"
+        android:clickable="true"
+        android:focusable="false"/>
+
+
+
+    <!-- Bouton Rechercher en dessous du Calendrier -->
+    <Button
+        android:id="@+id/btn_rechercher_offre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bouton_rechercher"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/edit_text_quand"
+        android:textColor="#4a4d54"
+        android:backgroundTint="#02C37e"
+        android:textStyle="italic"
+        android:layout_marginTop="32dp"/>
+
+</RelativeLayout>

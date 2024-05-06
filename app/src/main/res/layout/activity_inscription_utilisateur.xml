@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/couleur_fond_main">
+
+        <!-- Logo ImageView -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="28dp"
+            android:src="@drawable/logo2" />
+
+
+        <TextView
+            android:id="@+id/text_s_inscrire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_s_inscrire"
+            android:textColor="#4a4d54"
+            android:textSize="24sp"
+            android:layout_below="@id/logoImageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"/>
+
+
+        <!-- Champ de texte pour le nom d'utilisateur -->
+        <LinearLayout
+            android:id="@+id/layoutinscription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logoImageView"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/nomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@color/edit_text_background"
+                android:hint="Nom"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <EditText
+                android:id="@+id/prenomEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@color/edit_text_background"
+                android:hint="Prenom"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <EditText
+                android:id="@+id/nationnaliteEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@color/edit_text_background"
+                android:hint="Nationalité"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+
+
+            <EditText
+
+                android:id="@+id/dateNaissanceEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@color/edit_text_background"
+                android:hint="Date de naissance (facultatif)"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:inputType="none"
+                android:clickable="true"
+                android:focusable="false"/>
+
+
+            <EditText
+                android:id="@+id/numeroEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@color/edit_text_background"
+                android:hint="Numéro de télephone (facultatif) "
+                android:inputType="number"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@color/edit_text_background"
+                android:hint="Email (facultatif)"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+
+            <EditText
+                android:id="@+id/villeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@color/edit_text_background"
+                android:hint="Ville (facultatif)"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+
+            <EditText
+                android:id="@+id/nom_utilisateurEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@color/edit_text_background"
+                android:hint="Nom d'utilisateur"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <EditText
+                android:id="@+id/mdpEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@color/edit_text_background"
+                android:hint="Mot de pass"
+                android:inputType="textPassword"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+
+            <Button
+                android:id="@+id/cvButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="90dp"
+                android:backgroundTint="#4a4d54"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/layoutinscription"
+                android:text="Télécharger votre CV"/>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/inscriptionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="90dp"
+            android:backgroundTint="#02C37e"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/layoutinscription"
+            android:text="S'inscrire"/>
+
+
+
+    </RelativeLayout>
+</ScrollView>
