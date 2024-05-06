@@ -10,6 +10,9 @@
     <string name="text_trouver_job">Trouvez le job de vos reves !!!</string>
     <string name="text_inscription">"Cliquez ici pour vous inscrire "</string>
     <string name="text_s_inscrire">S\'inscrire</string>
+    <string name="nom_d_utilisateur">Nom d\'utilisateur</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="se_connecter">Se connecter</string>
 
 
     <string-array name="lieu">
