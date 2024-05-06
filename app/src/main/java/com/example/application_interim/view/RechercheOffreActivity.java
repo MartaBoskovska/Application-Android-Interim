@@ -1,4 +1,4 @@
-package com.example.application_interim;
+package com.example.application_interim.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.app.DatePickerDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
 import android.widget.AdapterView;
+
+import com.example.application_interim.R;
 
 
 public class RechercheOffreActivity extends AppCompatActivity {

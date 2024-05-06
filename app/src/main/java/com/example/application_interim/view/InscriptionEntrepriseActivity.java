@@ -1,4 +1,4 @@
-package com.example.application_interim;
+package com.example.application_interim.view;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -8,10 +8,13 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.application_interim.R;
+
 import java.util.Calendar;
 
-public class InscriptionUtilisateurActivity extends AppCompatActivity {
+public class InscriptionEntrepriseActivity extends AppCompatActivity {
     EditText dateNaissanceEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +42,7 @@ public class InscriptionUtilisateurActivity extends AppCompatActivity {
         int day = c.get(Calendar.DAY_OF_MONTH);
 
         // Créez une nouvelle instance de DatePickerDialog
-        DatePickerDialog datePickerDialog = new DatePickerDialog(InscriptionUtilisateurActivity.this,
+        DatePickerDialog datePickerDialog = new DatePickerDialog(InscriptionEntrepriseActivity.this,
                 R.style.CustomDatePickerDialogTheme,
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
@@ -54,6 +57,5 @@ public class InscriptionUtilisateurActivity extends AppCompatActivity {
 
         datePickerDialog.show();
     }
-
 
 }

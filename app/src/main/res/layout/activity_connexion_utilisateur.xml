@@ -44,10 +44,9 @@
             android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:background="@color/edit_text_background"
-            android:hint="Nom d'utilisateur"
+            android:hint="@string/nom_d_utilisateur"
             android:padding="13dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp" />
@@ -57,11 +56,9 @@
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/usernameEditText"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:background="@color/edit_text_background"
-            android:hint="Mot de passe"
+            android:hint="@string/mot_de_passe"
             android:inputType="textPassword"
             android:padding="13dp"
             android:paddingStart="8dp"
@@ -77,7 +74,7 @@
             android:backgroundTint="#02C37e"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/layoutconnexion"
-            android:text="Se connecter"/>
+            android:text="@string/se_connecter"/>
 
         <TextView
             android:id="@+id/text_inscription"
