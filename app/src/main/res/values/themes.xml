@@ -11,6 +11,8 @@
         <item name="colorAccent">#02C37e</item>
 
     </style>
+    <style name="GreenDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+    </style>
 
 
     <style name="Theme.ApplicationInterim" parent="Base.Theme.ApplicationInterim" />

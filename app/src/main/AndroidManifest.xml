@@ -29,8 +29,8 @@
         <activity
             android:name=".view.RechercheOffreActivity"
             android:exported="true">
-
         </activity>
+
         <activity
             android:name=".view.AffichageOffreActivity"
             android:exported="true">
@@ -39,6 +39,7 @@
             android:name=".view.InscriptionUtilisateurActivity"
             android:exported="true">
         </activity>
+
     </application>
 
 </manifest>
