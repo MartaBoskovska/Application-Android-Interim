@@ -13,19 +13,16 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.application_interim.R;
-import com.example.application_interim.repositories.UtilisateurRepository;
-import com.example.application_interim.viewmodel.ConnexionViewModel;
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.application_interim.viewmodel.UtilisateurViewModel;
 
 public class ConnexionUtilisateurActivity extends AppCompatActivity {
 
+    private UtilisateurViewModel connexionViewModel;
 
-    private ConnexionViewModel connexionViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connexion_utilisateur);
-
 
         TextView textView_inscription = findViewById(R.id.text_inscription);
         SpannableString content = new SpannableString(textView_inscription.getText());
@@ -48,18 +45,10 @@ public class ConnexionUtilisateurActivity extends AppCompatActivity {
                 EditText email = findViewById(R.id.usernameEditText);
                 EditText password = findViewById(R.id.passwordEditText);
 
-                connexionViewModel = new ConnexionViewModel();
-                connexionViewModel.connexionUtilisateur(email.getText().toString(), password.getText().toString()).addOnSuccessListener(authResult -> {
-                    Toast.makeText(that, "Connexion reussite", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(ConnexionUtilisateurActivity.this, RechercheOffreActivity.class);
-                    startActivity(intent);
-                }).addOnFailureListener(e -> {
-                    Toast.makeText(that, "Connexion echouee", Toast.LENGTH_SHORT).show();
-                });
+                connexionViewModel = new UtilisateurViewModel();
+                connexionViewModel.connexionUtilisateur(email.getText().toString(), password.getText().toString());
             }
         });
-
-
 
 
     }
