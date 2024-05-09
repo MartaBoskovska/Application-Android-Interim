@@ -15,25 +15,6 @@
     <string name="se_connecter">Se connecter</string>
 
 
-    <string-array name="lieu">
-        <item>Paris</item>
-        <item>Marseille</item>
-        <item>Lyon</item>
-        <item>Toulouse</item>
-        <item>Nice</item>
-        <item>Nantes</item>
-        <item>Strasbourg</item>
-        <item>Montpellier</item>
-        <item>Bordeaux</item>
-        <item>Lille</item>
-    </string-array>
-
-    <string-array name="quoi">
-        <item>Vente</item>
-        <item>Menage</item>
-        <item>Hote</item>
-        <item>Equipier</item>
-        <item>Btp</item>
-    </string-array>
+   
 
 </resources>

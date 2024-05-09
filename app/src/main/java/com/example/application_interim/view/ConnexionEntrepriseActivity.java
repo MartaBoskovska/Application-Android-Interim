@@ -16,7 +16,7 @@ public class ConnexionEntrepriseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_connexion_utilisateur);
+        setContentView(R.layout.activity_connexion_entreprise);
 
 
         TextView textView_inscription = findViewById(R.id.text_inscription);

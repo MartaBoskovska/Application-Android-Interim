@@ -8,28 +8,32 @@
 
     <!-- Bouton Menu -->
 
+    <!-- Image a cotedu bouton Menu -->
+
     <Button
         android:id="@+id/btn_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bouton_menu"
-        android:backgroundTint="#02C37e"
-        android:textColor="#FFFFFF"
+        android:text="Menu"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="31dp"
+        android:backgroundTint="#02C37e"
+        android:textColor="#FFFFFF" />
 
-    <!-- Image en dessous du bouton Menu -->
     <ImageView
         android:id="@+id/image_offre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo2"
-        android:layout_below="@id/btn_menu"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"/>
+        android:layout_width="138dp"
+        android:layout_height="123dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/logo2" />
+
 
 
 
 </RelativeLayout>
+
+
+

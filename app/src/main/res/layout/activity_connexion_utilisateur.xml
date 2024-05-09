@@ -73,6 +73,7 @@
             android:layout_marginEnd="90dp"
             android:backgroundTint="#02C37e"
             android:layout_centerHorizontal="true"
+            android:textSize="25sp"
             android:layout_below="@+id/layoutconnexion"
             android:text="@string/se_connecter"/>
 
