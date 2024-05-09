@@ -1,6 +1,7 @@
 package com.example.application_interim.view;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -83,6 +84,9 @@ public class InscriptionUtilisateurActivity extends AppCompatActivity {
                         int year = Integer.parseInt(parts[2]);
                         Date datenaissance = Date.newBuilder().setDay(day).setMonth(month).setYear(year).build();
                       */
+
+                startActivity(new Intent(InscriptionUtilisateurActivity.this, RechercheOffreActivity.class));
+
             }
         });
     }

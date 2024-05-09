@@ -47,6 +47,7 @@ public class ConnexionUtilisateurActivity extends AppCompatActivity {
 
                 connexionViewModel = new UtilisateurViewModel();
                 connexionViewModel.connexionUtilisateur(email.getText().toString(), password.getText().toString());
+                startActivity(new Intent(ConnexionUtilisateurActivity.this, RechercheOffreActivity.class));
             }
         });
 
