@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".RechercheOffreActivity">
-
-    <!-- Bouton Menu -->
+    android:layout_height="wrap_content"
+    android:background="@color/white">
 
     <Button
         android:id="@+id/btn_menu"
@@ -14,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="@string/bouton_menu"
         android:backgroundTint="#02C37e"
-        android:textColor="#4a4d54"
+        android:textColor="#FFFFFF"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="16dp"
@@ -42,100 +38,83 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"/>
 
-    <!-- Spinner et EditText pour "Où ?" en dessous du texte "Trouver job" -->
     <LinearLayout
-        android:id="@+id/layout_spinner_edittext_quoi"
+        android:id="@+id/layoutrecherche"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@id/text_trouver_job"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp">
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
 
-        <!-- Spinner pour le lieu -->
-
-
-
-        <!-- EditText pour le lieu -->
         <EditText
-            android:id="@+id/edit_text_quoi"
-            android:layout_width="0dp"
+            android:id="@+id/editTextQuoi"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Quoi ?"
-            android:minHeight="48dp"
-            android:layout_marginStart="8dp"
-            android:inputType="text"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/edit_text_background"
+            android:hint="Quoi?"
+            android:padding="13dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            />
 
-        <Spinner
-            android:id="@+id/spinner_quoi"
-            android:layout_width="wrap_content"
-            android:minHeight="48dp"
+        <!-- Votre ListView initiallement invisible -->
+        <ListView
+            android:id="@+id/listViewQuoi"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:spinnerMode="dropdown"/>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/layout_spinner_edittext_lieu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/layout_spinner_edittext_quoi"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp">
-
-        <!-- Spinner pour le lieu -->
+            android:layout_below="@id/editTextQuoi"
+            android:visibility="gone" />
 
 
-        <!-- EditText pour le lieu -->
         <EditText
-            android:id="@+id/edit_text_lieu"
-            android:layout_width="0dp"
+            android:id="@+id/editTextOu"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Où ?"
-            android:minHeight="48dp"
-            android:layout_marginStart="8dp"
-            android:inputType="text"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/edit_text_background"
+            android:hint="Ou?"
+            android:padding="13dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
 
-        <Spinner
-            android:id="@+id/spinner_lieu"
-            android:layout_width="wrap_content"
+        <ListView
+            android:id="@+id/listViewOu"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:spinnerMode="dropdown"/>
+            android:layout_below="@id/editTextOu"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/quandEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/edit_text_background"
+            android:hint="Quand"
+            android:padding="13dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:inputType="none"
+            android:clickable="true"
+            android:focusable="false" />
     </LinearLayout>
 
-    <EditText
-
-        android:id="@+id/edit_text_quand"
-
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:hint="Quand ?"
-        android:minHeight="48dp"
-        android:layout_below="@id/layout_spinner_edittext_lieu"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="30dp"
-
-        android:inputType="none"
-        android:clickable="true"
-        android:focusable="false"/>
-
-
-
-    <!-- Bouton Rechercher en dessous du Calendrier -->
     <Button
         android:id="@+id/btn_rechercher_offre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bouton_rechercher"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/edit_text_quand"
-        android:textColor="#4a4d54"
+        android:layout_below="@id/layoutrecherche"
+        android:textColor="#FFFFFF"
         android:backgroundTint="#02C37e"
-        android:textStyle="italic"
+        android:textSize="25sp"
         android:layout_marginTop="32dp"/>
 
 </RelativeLayout>

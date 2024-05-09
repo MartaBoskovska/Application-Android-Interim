@@ -1,13 +1,12 @@
 package com.example.application_interim;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.ListView;
 import android.app.DatePickerDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
@@ -16,80 +15,126 @@ import android.widget.AdapterView;
 
 public class RechercheOffreActivity extends AppCompatActivity {
 
-    EditText editQuand,editLieu,editQuoi; // Déclaration de l'EditText editQuand
+
+
+    EditText editTextQuoi, editQuand,editTextOu;
+    ListView   listViewQuoi,listViewOu;
+    String[] valuesQuoi = {
+            "Equipier",
+            "Menage",
+            "Vente",
+            "Babyssiting",
+            "BTP"
+
+    };
+    String[] valuesOu = {
+            "Dijon",
+            "Grenoble",
+            "Lyon",
+            "Marseille",
+            "Montpellier",
+            "Paris",
+            "Tours",
+
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recherche_offre);
+        listViewQuoi = findViewById(R.id.listViewQuoi);
+        editTextQuoi= findViewById(R.id.editTextQuoi);
 
-        // Initialisation de l'EditText editQuand
-        editQuand = findViewById(R.id.edit_text_quand);
-        editLieu = findViewById(R.id.edit_text_lieu);
-        editQuoi = findViewById(R.id.edit_text_quoi);
+        listViewOu = findViewById(R.id.listViewOu);
+        editTextOu= findViewById(R.id.editTextOu);
 
 
-        //Listederoulante
-        Spinner spinnerLieu = findViewById(R.id.spinner_lieu);
-        ArrayAdapter<CharSequence> adapterLieu = ArrayAdapter.createFromResource(this, R.array.lieu, android.R.layout.simple_spinner_item);
-        adapterLieu.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerLieu.setAdapter(adapterLieu);
+        ArrayAdapter<String> adapterQuoi = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, valuesQuoi);
+        listViewQuoi.setAdapter(adapterQuoi);
 
-        // Ecouteur de sélection pour le Spinner "Lieu" pour remplir l editText avec ce sui est selectionne
-        spinnerLieu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        ArrayAdapter<String> adapterOu = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, valuesOu);
+        listViewOu.setAdapter(adapterOu);
+
+        listViewQuoi.setVisibility(View.GONE);
+        listViewOu.setVisibility(View.GONE);
+
+        // Ajouter un écouteur de clic à l'EditText pour afficher ou masquer le ListView
+        editTextQuoi.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String selectedOption = parentView.getItemAtPosition(position).toString();
-                // Mettez à jour l'EditText avec la valeur sélectionnée
-                editLieu.setText(selectedOption);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // Faites quelque chose si rien n'est sélectionné
+            public void onClick(View v) {
+                toggleListViewVisibilityQuoi();
             }
         });
 
-        Spinner spinnerQuoi = findViewById(R.id.spinner_quoi);
-        ArrayAdapter<CharSequence> adapterQuoi = ArrayAdapter.createFromResource(this, R.array.quoi, android.R.layout.simple_spinner_item);
-        adapterQuoi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerQuoi.setAdapter(adapterQuoi);
-
-        // Ecouteur de sélection pour le Spinner "Quoi"
-        spinnerQuoi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        editTextOu.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String selectedOption = parentView.getItemAtPosition(position).toString();
-                // Mettez à jour l'EditText avec la valeur sélectionnée
-                editQuoi.setText(selectedOption);
-            }
-            // Ecouteur de sélection pour le Spinner "Quoi" pour remplir l editText avec ce sui est selectionne
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // Faites quelque chose si rien n'est sélectionné
+            public void onClick(View v) {
+                toggleListViewVisibilityOu();
             }
         });
 
-        // Ajout d'un OnClickListener à l'EditText editQuand
+        // Écouteur de clic pour gérer la sélection d'un élément dans le ListView
+        listViewQuoi.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = (String) parent.getItemAtPosition(position);
+                editTextQuoi.setText(selectedItem);
+                listViewQuoi.setVisibility(View.GONE); // Masquer le ListView après la sélection
+            }
+        });
+
+        listViewOu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = (String) parent.getItemAtPosition(position);
+                editTextOu.setText(selectedItem);
+                listViewOu.setVisibility(View.GONE); // Masquer le ListView après la sélection
+            }
+        });
+
+        editQuand = findViewById(R.id.quandEditText);
+
         editQuand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDialog();
             }
         });
-
-        Button anonymeButton = findViewById(R.id.btn_rechercher_offre);
-        anonymeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RechercheOffreActivity.this, AffichageOffreActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
-    // Méthode pour afficher la boîte de dialogue de sélection de la date
+    // Méthode pour afficher ou masquer le ListView
+    private void toggleListViewVisibilityQuoi() {
+
+        if (listViewQuoi.getVisibility() == View.VISIBLE) {
+            listViewQuoi.setVisibility(View.GONE);
+        } else {
+            listViewQuoi.setVisibility(View.VISIBLE);
+            hideKeyboardQuoi(); // Masquer le clavier lorsque le ListView est rendu visible
+        }
+    }
+
+    private void toggleListViewVisibilityOu() {
+
+        if (listViewOu.getVisibility() == View.VISIBLE) {
+            listViewOu.setVisibility(View.GONE);
+        } else {
+            listViewOu.setVisibility(View.VISIBLE);
+            hideKeyboardOu(); // Masquer le clavier lorsque le ListView est rendu visible
+        }
+    }
+
+    // Méthode pour masquer le clavier
+    private void hideKeyboardQuoi() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(editTextQuoi.getWindowToken(), 0);
+    }
+
+    private void hideKeyboardOu() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(editTextOu.getWindowToken(), 0);
+    }
+
     private void showDatePickerDialog() {
         // Obtenez la date actuelle
         final Calendar c = Calendar.getInstance();
@@ -107,10 +152,13 @@ public class RechercheOffreActivity extends AppCompatActivity {
                         // Mettez à jour le texte de l'EditText avec la date sélectionnée
                         String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
                         editQuand.setText(selectedDate);
+                        editQuand.setText(selectedDate);
                     }
                 }, year, month, day);
 
         datePickerDialog.show();
     }
+
+
 }
 
