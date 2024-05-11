@@ -13,7 +13,10 @@
     </style>
     <style name="GreenDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
     </style>
-
-
     <style name="Theme.ApplicationInterim" parent="Base.Theme.ApplicationInterim" />
+
+
+    <style name="CustomCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:buttonTint">#02C37e</item>
+    </style>
 </resources>

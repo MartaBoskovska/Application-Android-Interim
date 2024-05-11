@@ -1,39 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white"
+tools:context=".view.OffreActivity">
+
+
+    <!--Page 6 et 17 combiner activer les boutons en bas pour avoir bon rendu -->
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/couleur_fond_main"
-    tools:context=".view.AffichageOffreActivity">
+    android:layout_height="wrap_content">
 
     <!-- Bouton Menu -->
-
-    <!-- Image a cotedu bouton Menu -->
-
     <Button
         android:id="@+id/btn_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Menu"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="4dp"
         android:layout_marginTop="31dp"
         android:backgroundTint="#02C37e"
+        android:text="Menu"
         android:textColor="#FFFFFF" />
+
+    <!-- Image à côté du bouton Menu -->
+
 
     <ImageView
         android:id="@+id/image_offre"
         android:layout_width="138dp"
         android:layout_height="123dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="19dp"
         android:src="@drawable/logo2" />
 
+    <TextView
+        android:id="@+id/titre_offre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_menu"
+        android:layout_marginTop="69dp"
+        android:inputType="textCapCharacters"
+        android:minHeight="55dp"
+        android:text="TITRE OFFRE"
+        android:textColor="#5C9F7F"
+        android:textSize="30sp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="45dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/localisation_offre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titre_offre"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+
+        android:layout_marginTop="-19dp"
+        android:text="Ville , région"
+        android:inputType="textCapCharacters"
+        android:minHeight="55dp"
+        android:textColor="#89A597"
+        android:textSize="22dp"
+        android:textStyle="italic" />
 
 
+    <LinearLayout
+        android:id="@+id/detail_offre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/localisation_offre"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/desciption_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Description"
+        android:padding="13dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:textSize="22dp" />
+    <TextView
+        android:id="@+id/mission_titre"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Vos missions :"
+        android:textColor="#5C9F7F"
+        android:padding="13dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:textSize="22dp" />
+    <TextView
+        android:id="@+id/mission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Description missions"
+        android:padding="13dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/profil_titre"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Votre profil :"
+        android:textColor="#5C9F7F"
+        android:padding="13dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/profil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Description missions"
+        android:padding="13dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:textSize="22dp" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/consulter"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:text="Consulter candidatures"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#8D8E8D"
+        android:textSize="16sp"
+        android:textColor="#423E3E"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="31dp"
+        android:visibility="invisible"
+        />
+
+
+    <Button
+        android:id="@+id/postuler"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:text="POSTULER"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#02C37e"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginEnd="8dp"
+
+
+
+        />
+
+
+    <Button
+        android:id="@+id/modifier"
+        android:layout_width="125dp"
+        android:layout_height="48dp"
+        android:text="Modifier"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#02C37e"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginEnd="1dp"
+        android:visibility="invisible"
+
+        />
 
 </RelativeLayout>
 
-
+</ScrollView>
 

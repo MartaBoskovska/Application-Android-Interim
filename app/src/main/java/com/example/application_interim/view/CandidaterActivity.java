@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.application_interim.R;
 
-public class OffreActivity extends AppCompatActivity {
+public class CandidaterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_offre);
+        setContentView(R.layout.activity_candidater);
     }
 
 

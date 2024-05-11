@@ -1,0 +1,224 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white"
+tools:context=".view.CandidaterActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Bouton Annuler -->
+    <Button
+        android:id="@+id/btn_annuler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="31dp"
+        android:backgroundTint="#02C37e"
+        android:text="Annuler"
+        android:textColor="#FFFFFF" />
+
+    <!-- Image à côté du bouton Menu -->
+    <ImageView
+        android:id="@+id/image_offre"
+        android:layout_width="138dp"
+        android:layout_height="123dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="19dp"
+        android:src="@drawable/logo2" />
+
+    <TextView
+        android:id="@+id/titre_offre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_annuler"
+        android:layout_marginTop="69dp"
+        android:inputType="textCapCharacters"
+        android:minHeight="55dp"
+        android:text="TITRE OFFRE"
+        android:textColor="#5C9F7F"
+        android:textSize="30sp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="45dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/localisation_offre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titre_offre"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginTop="-19dp"
+        android:text="Ville , région"
+        android:inputType="textCapCharacters"
+        android:minHeight="55dp"
+        android:textColor="#89A597"
+        android:textSize="22dp"
+        android:textStyle="italic" />
+
+    <LinearLayout
+        android:id="@+id/layout_candidater"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/localisation_offre"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/info_titre"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="Mes informations :"
+            android:textColor="#5C9F7F"
+            android:padding="13dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:textSize="22dp" />
+
+        <EditText
+            android:id="@+id/nomEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/edit_text_background"
+            android:hint="Nom"
+            android:padding="13dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <EditText
+            android:id="@+id/prenomEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/edit_text_background"
+            android:hint="Prenom"
+            android:padding="13dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <EditText
+            android:id="@+id/nationnaliteEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/edit_text_background"
+            android:hint="Nationalité"
+            android:padding="13dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+
+
+        <EditText
+
+            android:id="@+id/dateNaissanceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@color/edit_text_background"
+            android:hint="Date de naissance (facultatif)"
+            android:padding="13dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:inputType="none"
+            android:clickable="true"
+            android:focusable="false"/>
+
+
+        <EditText
+            android:id="@+id/cvText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#CDCECF"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:textColor="#232323"
+            android:text="Télécharger votre CV"
+            android:padding="13dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <EditText
+            android:id="@+id/motivationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="#CDCECF"
+            android:textColor="#232323"
+            android:text="Télécharger une lettre de motivation (facultatif) "
+            android:padding="13dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CustomCheckBox"
+                android:checked="false" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="J'ai lu et accepté les conditions d'utilisations" />
+        </LinearLayout>
+
+
+
+
+
+
+
+        <!-- EditTexts pour le CV et la lettre de motivation -->
+
+    </LinearLayout>
+
+    <!-- Bouton Envoyer candidature -->
+    <Button
+        android:id="@+id/envoyer"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:text="Envoyer candidature"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="#02C37e"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginEnd="20dp"
+        android:layout_below="@id/layout_candidater"
+        android:layout_marginTop="0dp" />
+
+</RelativeLayout>
+</ScrollView>
+

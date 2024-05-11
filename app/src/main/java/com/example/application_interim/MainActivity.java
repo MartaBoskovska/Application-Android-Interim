@@ -8,8 +8,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.application_interim.view.CandidaterActivity;
+import com.example.application_interim.view.CompteUtilisateurActivity;
 import com.example.application_interim.view.ConnexionEntrepriseActivity;
 import com.example.application_interim.view.ConnexionUtilisateurActivity;
+import com.example.application_interim.view.OffreActivity;
 import com.example.application_interim.view.RechercheOffreActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ConnexionUtilisateurActivity.class);
                 startActivity(intent);
+
             }
         });
 
