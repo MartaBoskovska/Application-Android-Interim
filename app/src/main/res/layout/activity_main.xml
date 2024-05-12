@@ -11,38 +11,38 @@
     <ImageView
         android:id="@+id/logoApplication"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:src="@drawable/logo1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"/>
 
     <!-- Zone de texte au milieu -->
 
+
+    <!-- Bouton utilisateur -->
+
+
     <ImageView
         android:id="@+id/ImageTexteAcceuil"
+        android:layout_width="match_parent"
+        android:layout_height="336dp"
         android:layout_below="@id/logoApplication"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/acceuil"
-        android:layout_centerHorizontal="true"
-       />
+        android:layout_marginTop="39dp"
+        android:src="@drawable/acceuil" />
 
     <TextView
         android:id="@+id/texteContinuer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ImageTexteAcceuil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/text_continuer"
         android:textColor="#02C37e"
-        android:layout_below="@+id/ImageTexteAcceuil"
-        android:textSize="18sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-       />
-
-
-
-
-    <!-- Bouton utilisateur -->
+        android:textSize="22sp" />
 
 
 
@@ -62,16 +62,15 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="125dp"
-    android:layout_height="48dp"
-    android:text="@string/bouton_anonyme"
-    android:layout_centerHorizontal="true"
-    android:layout_alignParentBottom="true"
-    android:backgroundTint="#02C37e"
-    android:textColor="#FFFFFF"
-    android:textSize="16sp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginEnd="8dp"
+        android:backgroundTint="#02C37e"
+        android:text="@string/bouton_anonyme"
+        android:textColor="#FFFFFF"
 
-        />
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/button3"
