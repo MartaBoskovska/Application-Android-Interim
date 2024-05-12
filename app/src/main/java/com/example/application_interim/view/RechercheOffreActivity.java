@@ -1,26 +1,36 @@
 package com.example.application_interim.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.app.DatePickerDialog;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
 import android.widget.AdapterView;
 
 import com.example.application_interim.R;
+import com.example.application_interim.viewmodel.OffreViewModel;
 
 
 public class RechercheOffreActivity extends AppCompatActivity {
 
 
-
-    EditText editTextQuoi, editQuand,editTextOu;
-    ListView   listViewQuoi,listViewOu;
+    EditText editTextQuoi, editQuand, editTextOu;
+    ListView listViewQuoi, listViewOu;
     String[] valuesQuoi = {
             "Equipier",
             "Menage",
@@ -46,10 +56,10 @@ public class RechercheOffreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recherche_offre);
         listViewQuoi = findViewById(R.id.listViewQuoi);
-        editTextQuoi= findViewById(R.id.editTextQuoi);
+        editTextQuoi = findViewById(R.id.editTextQuoi);
 
         listViewOu = findViewById(R.id.listViewOu);
-        editTextOu= findViewById(R.id.editTextOu);
+        editTextOu = findViewById(R.id.editTextOu);
 
 
         ArrayAdapter<String> adapterQuoi = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, valuesQuoi);
@@ -66,6 +76,7 @@ public class RechercheOffreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toggleListViewVisibilityQuoi();
+
             }
         });
 
@@ -103,6 +114,30 @@ public class RechercheOffreActivity extends AppCompatActivity {
                 showDatePickerDialog();
             }
         });
+
+        Button buttonRechercher = findViewById(R.id.btn_rechercher_offre);
+        buttonRechercher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Récupérer les valeurs des EditText
+                String intitule = editTextQuoi.getText().toString();
+                String region = editTextOu.getText().toString();
+                String date = editQuand.getText().toString();
+
+                // Rechercher les offres correspondantes
+
+                Map<String, String> searchData = new HashMap<>();
+                searchData.put("intitule", intitule);
+                searchData.put("date", date);
+                searchData.put("region", region);
+
+                Intent intent = new Intent(RechercheOffreActivity.this, AffichageOffreActivity.class);
+                intent.putExtra("searchdata", (Serializable) searchData);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     // Méthode pour afficher ou masquer le ListView

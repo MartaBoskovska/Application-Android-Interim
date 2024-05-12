@@ -13,8 +13,9 @@
     <string name="nom_d_utilisateur">Nom d\'utilisateur</string>
     <string name="mot_de_passe">Mot de passe</string>
     <string name="se_connecter">Se connecter</string>
+    <string name="date_offre">Publiée le:</string>
+    <string name="type_de_contrat">Type de contrat:</string>
+    <string name="voir_plus">VOIR PLUS</string>
 
-
-   
 
 </resources>
