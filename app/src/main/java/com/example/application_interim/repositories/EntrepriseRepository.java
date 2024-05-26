@@ -23,38 +23,38 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Map;
 
-public class UtilisateurRepository {
+public class EntrepriseRepository {
 
 
     private final FirebaseAuth mAuth;
     private final FirebaseFirestore firestore;
 
-    public UtilisateurRepository() {
+    public EntrepriseRepository() {
         mAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
     }
 
-    public LiveData<FirebaseUser> connexionUtilisateur(String email, String motDePasse) {
-        MutableLiveData<FirebaseUser> userLiveData = new MutableLiveData<>();
+    public LiveData<FirebaseUser> connexionEntreprise(String email, String motDePasse) {
+        MutableLiveData<FirebaseUser> entrepriseLiveData = new MutableLiveData<>();
         mAuth.signInWithEmailAndPassword(email, motDePasse).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Log.w(TAG, "Connexion reussite");
-                userLiveData.setValue(mAuth.getCurrentUser());
+                entrepriseLiveData.setValue(mAuth.getCurrentUser());
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.w(TAG, "Connexion echouee", e);
-                userLiveData.setValue(null);
+                entrepriseLiveData.setValue(null);
             }
         });
-        return userLiveData;
+        return entrepriseLiveData;
     }
 
 
-    public void addUser(Map<String, Object> user) throws Exception {
-        firestore.collection("users").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+    public void addEntreprise(Map<String, Object> enterprise) throws Exception {
+        firestore.collection("enterprises").add(enterprise).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
                 Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
@@ -65,7 +65,7 @@ public class UtilisateurRepository {
                 Log.w(TAG, "Error adding document", e);
             }
         });
-        mAuth.createUserWithEmailAndPassword(user.get("mail").toString(), user.get("password").toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(enterprise.get("mail").toString(), enterprise.get("password").toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Log.d(TAG, "Inscription reussite");

@@ -51,7 +51,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 android:background="@color/edit_text_background"
-                android:hint="Nom de l'entreprise"
+                android:hint="@string/nom_de_l_entreprise"
                 android:padding="13dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp" />
@@ -63,7 +63,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 android:background="@color/edit_text_background"
-                android:hint="Email (facultatif)"
+                android:hint="@string/email_facultatif"
                 android:padding="13dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp" />
@@ -75,7 +75,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 android:background="@color/edit_text_background"
-                android:hint="Numéro de télephone (facultatif) "
+                android:hint="@string/numero_de_telephone_entreprise"
                 android:inputType="number"
                 android:padding="13dp"
                 android:paddingStart="8dp"
@@ -90,7 +90,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 android:background="@color/edit_text_background"
-                android:hint="Adresse de l'entreprise"
+                android:hint="@string/adresse_de_l_entreprise"
                 android:padding="13dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp" />
@@ -102,7 +102,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 android:background="@color/edit_text_background"
-                android:hint="Site web"
+                android:hint="@string/site_web"
                 android:padding="13dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp" />
@@ -111,7 +111,7 @@
 
             <EditText
 
-                android:id="@+id/linledinEditText"
+                android:id="@+id/linkedinEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -120,10 +120,7 @@
                 android:hint="Linkedin (facultatif)"
                 android:padding="13dp"
                 android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:inputType="none"
-                android:clickable="true"
-                android:focusable="false"/>
+                android:paddingEnd="8dp" />
 
 
 
@@ -154,19 +151,6 @@
                 android:paddingEnd="8dp" />
 
 
-
-            <EditText
-                android:id="@+id/nom_utilisateurEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
-                android:background="@color/edit_text_background"
-                android:hint="Nom d'utilisateur"
-                android:padding="13dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp" />
-
             <EditText
                 android:id="@+id/mdpEditText"
                 android:layout_width="match_parent"
@@ -174,31 +158,11 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 android:background="@color/edit_text_background"
-                android:hint="Mot de pass"
+                android:hint="Mot de passe"
                 android:inputType="textPassword"
                 android:padding="13dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp" />
-
-
-            <Button
-                android:id="@+id/cvButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="90dp"
-                android:backgroundTint="#4a4d54"
-
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/layoutinscription"
-                android:text="Télécharger votre CV"/>
-
-
-
-
-
-
-
 
         </LinearLayout>
         <Button
