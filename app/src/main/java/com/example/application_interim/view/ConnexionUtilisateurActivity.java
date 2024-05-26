@@ -11,9 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 
 import com.example.application_interim.R;
 import com.example.application_interim.viewmodel.UtilisateurViewModel;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ConnexionUtilisateurActivity extends AppCompatActivity {
 
@@ -46,8 +48,18 @@ public class ConnexionUtilisateurActivity extends AppCompatActivity {
                 EditText password = findViewById(R.id.passwordEditText);
 
                 connexionViewModel = new UtilisateurViewModel();
-                connexionViewModel.connexionUtilisateur(email.getText().toString(), password.getText().toString());
-                startActivity(new Intent(ConnexionUtilisateurActivity.this, RechercheOffreActivity.class));
+
+                LiveData<FirebaseUser> userID = connexionViewModel.connexionUtilisateur(email.getText().toString(), password.getText().toString());
+                userID.observe(that, id -> {
+                            if (id != null) {
+                                Toast.makeText(that, "Connexion réussie", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(ConnexionUtilisateurActivity.this, RechercheOffreActivity.class));
+                            } else {
+                                Toast.makeText(that, "Veulliez entrer un email et un mot de passe valides", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                );
+
             }
         });
 

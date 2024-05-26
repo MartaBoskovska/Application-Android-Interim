@@ -71,12 +71,20 @@ public class InscriptionUtilisateurActivity extends AppCompatActivity {
                 // Inscription de l'utilisateur
                 utilisateurViewModel = new UtilisateurViewModel();
 
-                if (!lastname.isEmpty() && !firstname.isEmpty() && !nationality.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
-                    utilisateurViewModel.inscriptionUtilisateur(firstname, lastname, dateNaissance, nationality, city, phoneNumber, "", email, password);
-                } else {
-                    Toast.makeText(that, "Veuiilez remplir tous les champs obligatoires", Toast.LENGTH_SHORT).show();
+                try {
+                    if (!lastname.isEmpty() && !firstname.isEmpty() && !nationality.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
+                        utilisateurViewModel.inscriptionUtilisateur(firstname, lastname, dateNaissance, nationality, city, phoneNumber, "", email, password);
+
+                    } else {
+                        Toast.makeText(that, "Veuiilez remplir tous les champs obligatoires", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                    /*
+                catch(Exception e) {
+                    Toast.makeText(that, "Veuillez entrer des informations valides", Toast.LENGTH_SHORT).show();
+                }
+
+
+                /*
                     String[] parts = dateNaissanceEditText.getText().toString().split("/");
                     if (parts.length == 3) {
                         int day = Integer.parseInt(parts[0]);
@@ -85,7 +93,7 @@ public class InscriptionUtilisateurActivity extends AppCompatActivity {
                         Date datenaissance = Date.newBuilder().setDay(day).setMonth(month).setYear(year).build();
                       */
 
-                startActivity(new Intent(InscriptionUtilisateurActivity.this, RechercheOffreActivity.class));
+                startActivity(new Intent(InscriptionUtilisateurActivity.this, ConnexionUtilisateurActivity.class));
 
             }
         });

@@ -16,6 +16,20 @@
     <string name="date_offre">Publiée le:</string>
     <string name="type_de_contrat">Type de contrat:</string>
     <string name="voir_plus">VOIR PLUS</string>
+    <string name="email">Email</string>
+    <string name="numero_de_telephone">Numéro de télephone (facultatif)</string>
+    <string name="date_de_naissance">Date de naissance (facultatif)</string>
+    <string name="nationalit">Nationalité</string>
+    <string name="prenom">Prenom</string>
+    <string name="nom">Nom</string>
+    <string name="mot_de_pass">Mot de pass</string>
+    <string name="ville">Ville (facultatif)</string>
+    <string name="button_telecharger_cv">Télécharger votre CV</string>
+    <string name="nom_de_l_entreprise">Nom de l\'entreprise</string>
+    <string name="email_facultatif">Email (facultatif)</string>
+    <string name="numero_de_telephone_entreprise">Numéro de télephone (facultatif)</string>
+    <string name="adresse_de_l_entreprise">Adresse de l\'entreprise</string>
+    <string name="site_web">Site web</string>
 
 
 </resources>
