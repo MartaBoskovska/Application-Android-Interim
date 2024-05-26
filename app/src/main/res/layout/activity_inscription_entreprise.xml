@@ -120,10 +120,7 @@
                 android:hint="Linkedin (facultatif)"
                 android:padding="13dp"
                 android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:inputType="none"
-                android:clickable="true"
-                android:focusable="false"/>
+                android:paddingEnd="8dp" />
 
 
 
@@ -161,31 +158,11 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
                 android:background="@color/edit_text_background"
-                android:hint="Mot de pass"
+                android:hint="Mot de passe"
                 android:inputType="textPassword"
                 android:padding="13dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp" />
-
-
-            <Button
-                android:id="@+id/cvButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="90dp"
-                android:backgroundTint="#4a4d54"
-
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/layoutinscription"
-                android:text="Télécharger votre CV"/>
-
-
-
-
-
-
-
 
         </LinearLayout>
         <Button

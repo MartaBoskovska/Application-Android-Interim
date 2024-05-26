@@ -1,9 +1,15 @@
 package com.example.application_interim.repositories;
 
 import android.util.Log;
+import android.widget.Toast;
+
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.application_interim.viewmodel.OffreViewModel;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -46,6 +52,20 @@ public class OffreRepository {
         Log.d("matchingOffers2", matchingOffers.toString());
         return matchingOffers;
     }
+
+    public LiveData<Boolean> addOffre(Map<String, Object> offre) {
+        MutableLiveData<Boolean> success = new MutableLiveData<>();
+        firestore.collection("offers").add(offre).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Log.d("OFFRE", "DocumentSnapshot added with ID: " + documentReference.getId());
+                success.setValue(true);
+            }
+        });
+        return success;
+    }
+
+
     /*public List<Map<String, Object>> getOffres(Map<String, String> searchItems) {
 
         firestore.collection("offers").get()
