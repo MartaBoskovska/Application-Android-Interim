@@ -38,6 +38,13 @@
     <string name="description">Décrire ici les missions du poste, les compétences requises</string>
     <string name="intitule_du_poste">Intitulé du poste</string>
     <string name="ajouter_nouvelle_offre">Ajouter une nouvelle offre</string>
+    <string name="votre_profil">Votre profil :</string>
+    <string name="description_missions">Description missions</string>
+    <string name="postuler">POSTULER</string>
+    <string name="vos_missions">Vos missions :</string>
+    <string name="description1">Description</string>
+    <string name="ville_r_gion">Ville , région</string>
+    <string name="titre_offre">TITRE OFFRE</string>
 
 
 </resources>
