@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Map;
@@ -54,21 +55,11 @@ public class UtilisateurRepository {
 
 
     public void addUser(Map<String, Object> user) throws Exception {
-        firestore.collection("users").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.w(TAG, "Error adding document", e);
-            }
-        });
         mAuth.createUserWithEmailAndPassword(user.get("mail").toString(), user.get("password").toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
                 Log.d(TAG, "Inscription reussite");
+                firestore.collection("users").document(authResult.getUser().getUid()).set(user);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -76,5 +67,25 @@ public class UtilisateurRepository {
                 Log.w(TAG, "Inscription echouee", e);
             }
         });
+    }
+
+    public LiveData<Map<String, Object>> getUser(String userId) {
+        MutableLiveData<Map<String, Object>> userLiveData = new MutableLiveData<>();
+        firestore.collection("users").document(userId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        userLiveData.setValue(document.getData());
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+        return userLiveData;
     }
 }

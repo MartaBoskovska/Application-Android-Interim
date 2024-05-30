@@ -17,6 +17,7 @@ import java.util.Map;
 public class AffichageOffreActivity extends AppCompatActivity {
 
     private OffreViewModel offreViewModel;
+    private String userId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,8 @@ public class AffichageOffreActivity extends AppCompatActivity {
             String intitule = extra.get("intitule");
             String date = extra.get("date");
             String region = extra.get("region");
+            this.userId = (String) intent.getExtras().get("USER_ID");
+            Log.d("AffichageOffreActivity", "userId: " + this.userId);
             offreViewModel.getListeOffres(intitule, date, region);
             List<Map<String, Object>> offreData = offreViewModel.getOffresData();
 
@@ -45,6 +48,8 @@ public class AffichageOffreActivity extends AppCompatActivity {
         Log.d("AffichageOffreActivity", "createFragments");
         List<Map<String, Object>> data = offreViewModel.getOffresData();
         for (Map<String, Object> offre : data) {
+            Log.d("AffichageOffreActivityOffre", offre.toString());
+            Log.e("AffichageOffreActivityOffre", offre.get("offreID").toString());
             String titre = (String) offre.get("title");
             String date = (String) offre.get("publicationDate");
             String lieu = (String) offre.get("region");
@@ -52,10 +57,14 @@ public class AffichageOffreActivity extends AppCompatActivity {
             String description = (String) offre.get("description");
             String missions = (String) offre.get("missions");
             String profil = (String) offre.get("profil");
+            String offreID = (String) offre.get("offreID");
+
+            String userId = this.userId;
+            Log.e("AffichageOffreActivity", "userId: " + userId);
 
             // Creer un fragment pour chaque offre
             OffreFragment offreFragment = new OffreFragment();
-            offreFragment.setArguments(titre, date, lieu, typeContrat, description, missions, profil);
+            offreFragment.setArguments(offreID, userId, titre, date, lieu, typeContrat, description, missions, profil);
 
             // Ajouter le fragment a la liste
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, offreFragment).commit();

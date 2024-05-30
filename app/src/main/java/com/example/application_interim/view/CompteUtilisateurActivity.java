@@ -1,11 +1,14 @@
 package com.example.application_interim.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.application_interim.R;
+import com.example.application_interim.viewmodel.UtilisateurViewModel;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -13,11 +16,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class CompteUtilisateurActivity extends AppCompatActivity {
 
     private TextView nomUtilisateurText,localisationText,aproposText;
+    private UtilisateurViewModel utilisateurViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compte_utilisateur);
+        this.utilisateurViewModel = new UtilisateurViewModel();
 
         ImageView logomsg = findViewById(R.id.logomsg);
         ImageView logorecherche = findViewById(R.id.logorecherche);
@@ -26,8 +31,28 @@ public class CompteUtilisateurActivity extends AppCompatActivity {
         TextView textrechercher = findViewById(R.id.textrechercher);
         TextView textprofil = findViewById(R.id.textprofil);
         nomUtilisateurText = findViewById(R.id.nom_utilisateur_Text);
+        aproposText = findViewById(R.id.apropos);
 
-        aproposText=findViewById(R.id.apropos);
+        if (getIntent().getExtras() != null) {
+            String userId = getIntent().getStringExtra("USER_ID");
+            utilisateurViewModel.setUserId(userId);
+        }
+        utilisateurViewModel.getUser(utilisateurViewModel.getUserId()).observe(this, user -> {
+            if (user != null) {
+                Log.d("USER", "User data: " + user);
+                String firstName = (String) user.get("firstname");
+                String lastName = (String) user.get("lastname");
+                String nationality = (String) user.get("nationality");
+                String phone = (String) user.get("phoneNumber");
+                String birth = (String) user.get("dateofbirth");
+                String city = (String) user.get("city");
+
+                nomUtilisateurText.setText(firstName + " " + lastName);
+                aproposText.setText("Salut je suis " + firstName + " " + lastName + " et je suis de " + city +" et voici mes contacts : " + phone );
+            }
+        });
+
+        aproposText = findViewById(R.id.apropos);
 
 
         logomsg.setOnClickListener(v -> {
@@ -40,6 +65,9 @@ public class CompteUtilisateurActivity extends AppCompatActivity {
             textmsg.setTextColor(getResources().getColor(R.color.black));
             textrechercher.setTextColor(getResources().getColor(R.color.vert));
             textprofil.setTextColor(getResources().getColor(R.color.black));
+            Intent intent = new Intent(CompteUtilisateurActivity.this, RechercheOffreActivity.class);
+            intent.putExtra("USER_ID", utilisateurViewModel.getUserId());
+            startActivity(intent);
         });
 
         logoprofil.setOnClickListener(v -> {
@@ -49,8 +77,8 @@ public class CompteUtilisateurActivity extends AppCompatActivity {
         });
 
         // Récupérer l'ID de l'utilisateur à partir de l'intent
-        String userId = getIntent().getStringExtra("USER_ID");
-        if (userId != null) {
+        /*
+        if (utilisateurViewModel.getUserId() != null) {
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             DocumentReference docRef = db.collection("users").document("ku1JzmVL1pSYDKM3h7xE");
 
@@ -84,5 +112,6 @@ public class CompteUtilisateurActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "User ID not found", Toast.LENGTH_SHORT).show();
         }
+    }*/
     }
 }

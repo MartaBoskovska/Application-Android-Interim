@@ -14,7 +14,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UtilisateurViewModel extends ViewModel {
+    private String userId;
 
+    private LiveData<Map<String,Object>> user;
     private UtilisateurRepository utilisateurRepository = new UtilisateurRepository();
     public LiveData<FirebaseUser> connexionUtilisateur (String email, String motDePasse) {
         return utilisateurRepository.connexionUtilisateur(email, motDePasse);
@@ -35,5 +37,19 @@ public class UtilisateurViewModel extends ViewModel {
         docData.put("password", password);
 
         utilisateurRepository.addUser(docData);
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public LiveData<Map<String,Object>> getUser(String userId) {
+        if (user == null) {
+            user = utilisateurRepository.getUser(userId);
+        }
+        return user;
     }
 }

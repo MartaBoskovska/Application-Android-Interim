@@ -22,7 +22,7 @@
     <string name="nationalit">Nationalité</string>
     <string name="prenom">Prenom</string>
     <string name="nom">Nom</string>
-    <string name="mot_de_pass">Mot de pass</string>
+    <string name="mot_de_pass">Mot de passe</string>
     <string name="ville_facultatif">Ville (facultatif)</string>
     <string name="button_telecharger_cv">Télécharger votre CV</string>
     <string name="nom_de_l_entreprise">Nom de l\'entreprise</string>

@@ -19,6 +19,8 @@ import org.w3c.dom.Text;
 
 public class OffreFragment extends Fragment {
 
+    private String offreID;
+    private String userId;
     private String titre;
     private String description;
     private String date;
@@ -33,7 +35,10 @@ public class OffreFragment extends Fragment {
         super(R.layout.fragment_offre);
     }
 
-    public void setArguments(String titre, String date, String lieu, String typeContrat, String description, String missions, String profil) {
+    public void setArguments(String offreID, String userId, String titre, String date, String lieu, String typeContrat, String description, String missions, String profil) {
+        //Log.e("OffreFragment", "setArguments"+offreID+userId+titre+date+lieu+typeContrat+description+missions+profil);
+        this.offreID = offreID;
+        this.userId = userId;
         this.titre = titre;
         this.date = date;
         this.lieu = lieu;
@@ -68,6 +73,9 @@ public class OffreFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), OffreActivity.class);
+
+                i.putExtra("offreID", offreID);
+                i.putExtra("userId", userId);
                 i.putExtra("titre", titre);
                 i.putExtra("date", date);
                 i.putExtra("lieu", lieu);
@@ -75,6 +83,7 @@ public class OffreFragment extends Fragment {
                 i.putExtra("description", description);
                 i.putExtra("missions", missions);
                 i.putExtra("profil", profil);
+
                 startActivity(i);
 
             }

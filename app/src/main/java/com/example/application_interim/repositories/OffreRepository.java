@@ -38,7 +38,11 @@ public class OffreRepository {
                         if (offre.getString("intitule").equals(searchItems.get("intitule")) &&
                                 offre.getString("region").equals(searchItems.get("region")) &&
                                 offre.getString("publicationDate").equals(searchItems.get("date"))) {
-                            this.matchingOffers.add(offre.getData());
+                            Map<String, Object> map = offre.getData();
+                            map.put("offreID", offre.getId());
+                            Log.w("OFFRE", map.toString());
+                            this.matchingOffers.add(map);
+                            Log.w("matchingOffers", map.toString());
                             Log.d("matchingOffersssss", matchingOffers.toString());
                         }
                     }
