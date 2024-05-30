@@ -45,13 +45,17 @@ public class AffichageOffreActivity extends AppCompatActivity {
         Log.d("AffichageOffreActivity", "createFragments");
         List<Map<String, Object>> data = offreViewModel.getOffresData();
         for (Map<String, Object> offre : data) {
-            String titre = (String) offre.get("intitule");
-            String date = (String) offre.get("date");
+            String titre = (String) offre.get("title");
+            String date = (String) offre.get("publicationDate");
             String lieu = (String) offre.get("region");
+            String typeContrat = (String) offre.get("contract");
+            String description = (String) offre.get("description");
+            String missions = (String) offre.get("missions");
+            String profil = (String) offre.get("profil");
 
             // Creer un fragment pour chaque offre
             OffreFragment offreFragment = new OffreFragment();
-            offreFragment.setArguments(titre, date, lieu);
+            offreFragment.setArguments(titre, date, lieu, typeContrat, description, missions, profil);
 
             // Ajouter le fragment a la liste
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, offreFragment).commit();

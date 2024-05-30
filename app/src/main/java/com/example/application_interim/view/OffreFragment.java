@@ -1,9 +1,12 @@
 package com.example.application_interim.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,14 +24,23 @@ public class OffreFragment extends Fragment {
     private String date;
     private String lieu;
 
+    private String typeContrat;
+
+    private String missions;
+    private String profil;
+
     public OffreFragment() {
         super(R.layout.fragment_offre);
     }
 
-    public void setArguments(String titre, String date, String lieu) {
+    public void setArguments(String titre, String date, String lieu, String typeContrat, String description, String missions, String profil) {
         this.titre = titre;
         this.date = date;
         this.lieu = lieu;
+        this.typeContrat = typeContrat;
+        this.description = description;
+        this.missions = missions;
+        this.profil = profil;
     }
 
     @Nullable
@@ -42,15 +54,31 @@ public class OffreFragment extends Fragment {
         TextView typeDeContratView = view.findViewById(R.id.text_contract_type);
         TextView lieuView = view.findViewById(R.id.text_region);
 
-        String dateText = dateView.getText().toString();
-        String contractText = typeDeContratView.getText().toString();
+        String textFinalDate = dateView.getText().toString() + this.date;
+        String textFinalContrat = typeDeContratView.getText().toString() + this.typeContrat;
 
-        String text = dateText + " " + this.date;
         titreView.setText(titre);
-
-        dateView.setText(text);
+        dateView.setText(textFinalDate);
         lieuView.setText(lieu);
+        typeDeContratView.setText(textFinalContrat);
 
+        Button buttonVoirPLus = view.findViewById(R.id.btn_see_more);
+
+        buttonVoirPLus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), OffreActivity.class);
+                i.putExtra("titre", titre);
+                i.putExtra("date", date);
+                i.putExtra("lieu", lieu);
+                i.putExtra("typeContrat", typeContrat);
+                i.putExtra("description", description);
+                i.putExtra("missions", missions);
+                i.putExtra("profil", profil);
+                startActivity(i);
+
+            }
+        });
         return view;
     }
 }

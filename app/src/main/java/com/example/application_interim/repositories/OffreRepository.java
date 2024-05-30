@@ -66,28 +66,5 @@ public class OffreRepository {
     }
 
 
-    /*public List<Map<String, Object>> getOffres(Map<String, String> searchItems) {
-
-        firestore.collection("offers").get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    for (QueryDocumentSnapshot offre : queryDocumentSnapshots) {
-                        Log.d("OFFRE", offre.getData().toString());
-                        if (offre.getString("intitule").equals(searchItems.get("intitule")) &&
-                                offre.getString("region").equals(searchItems.get("region")) &&
-                                offre.getString("publicationDate").equals(searchItems.get("date"))) {
-                            this.matchingOffers.add(offre.getData());
-                            Log.d("matchingOffersssss", matchingOffers.toString());
-                        }
-                    }
-
-                })
-                .addOnFailureListener(e -> {
-                    Log.e("ERROR_GET_OFFERS", "Error getting documents: ", e);
-                });
-        Log.d("matchingOffers2", matchingOffers.toString());
-
-        return matchingOffers;
-    }*/
-
 
 }
