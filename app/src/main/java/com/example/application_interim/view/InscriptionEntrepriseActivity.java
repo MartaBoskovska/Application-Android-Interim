@@ -1,11 +1,9 @@
 package com.example.application_interim.view;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -13,9 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.application_interim.R;
 import com.example.application_interim.viewmodel.EntrepriseViewModel;
-import com.example.application_interim.viewmodel.UtilisateurViewModel;
-
-import java.util.Calendar;
 
 public class InscriptionEntrepriseActivity extends AppCompatActivity {
 

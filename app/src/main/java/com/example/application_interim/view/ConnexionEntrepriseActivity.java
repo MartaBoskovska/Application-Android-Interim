@@ -15,7 +15,6 @@ import androidx.lifecycle.LiveData;
 
 import com.example.application_interim.R;
 import com.example.application_interim.viewmodel.EntrepriseViewModel;
-import com.example.application_interim.viewmodel.UtilisateurViewModel;
 import com.google.firebase.auth.FirebaseUser;
 
 public class ConnexionEntrepriseActivity extends AppCompatActivity {

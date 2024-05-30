@@ -1,10 +1,8 @@
 package com.example.application_interim.viewmodel;
 
-import android.app.Activity;
 import android.util.Log;
 
 import com.example.application_interim.repositories.OffreRepository;
-import com.example.application_interim.repositories.UtilisateurRepository;
 import com.example.application_interim.view.AffichageOffreActivity;
 
 import java.util.HashMap;

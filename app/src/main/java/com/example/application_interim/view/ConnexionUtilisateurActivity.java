@@ -53,7 +53,10 @@ public class ConnexionUtilisateurActivity extends AppCompatActivity {
                 userID.observe(that, id -> {
                             if (id != null) {
                                 Toast.makeText(that, "Connexion réussie", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(ConnexionUtilisateurActivity.this, RechercheOffreActivity.class));
+                                String userId = id.getUid();
+                                Intent intent = new Intent(ConnexionUtilisateurActivity.this, CompteUtilisateurActivity.class);
+                                intent.putExtra("USER_ID", userId);
+                                startActivity(intent);
                             } else {
                                 Toast.makeText(that, "Veulliez entrer un email et un mot de passe valides", Toast.LENGTH_SHORT).show();
                             }
@@ -66,3 +69,4 @@ public class ConnexionUtilisateurActivity extends AppCompatActivity {
 
     }
 }
+

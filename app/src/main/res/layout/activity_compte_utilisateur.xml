@@ -4,135 +4,254 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- Contenu du ScrollView -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:background="#E1D9D9"
         android:padding="16dp">
 
-        <!-- Bouton Menu -->
-        <Button
-            android:id="@+id/btn_menu"
+        <!-- Cercle pour ajouter une photo -->
+        <LinearLayout
+            android:id="@+id/add_photo_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:backgroundTint="#02C37e"
-            android:text="Menu"
-            android:textColor="#FFFFFF" />
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/add_photo"
+                android:layout_width="60dp"
+                android:layout_height="45dp"
+                android:background="@drawable/circle_background"
+                android:src="@drawable/profil" />
+
+            <TextView
+                android:id="@+id/add_photo_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Photo de profil"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Image à droite -->
 
         <!-- Titre -->
+
+        <ImageView
+            android:id="@+id/right_image"
+            android:layout_width="150dp"
+            android:layout_height="84dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="-26dp"
+            android:src="@drawable/logo3" />
+
         <TextView
-            android:id="@+id/nom_utilisateur_editText"
+            android:id="@+id/nom_utilisateur_Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btn_menu"
+            android:layout_below="@id/add_photo_container"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:text="NOM PRENOM CANDIDAT"
             android:textColor="#2C2B2B"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
-        <!-- Localisation -->
-
-        <TextView
-            android:id="@+id/localisation_offre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/nom_utilisateur_editText"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="1dp"
-            android:text="Ville , région"
-            android:inputType="textCapCharacters"
-            android:minHeight="55dp"
-            android:textColor="#635B5B"
-            android:textSize="22dp"
-            android:textStyle="italic" />
 
 
     </RelativeLayout>
 
-
-
-    <!-- Contenu du ScrollView -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:fillViewport="true">
 
-
         <LinearLayout
-            android:id="@+id/detail_candidat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="45dp"
-            android:layout_marginBottom="80dp"
             android:orientation="vertical">
 
-
-            <TextView
-                android:id="@+id/apropos_titre"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="45dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="45dp"
-                android:padding="13dp"
-                android:text="A propos "
-                android:textColor="#02C37e"
-                android:textSize="22dp" />
-
-            <TextView
-                android:id="@+id/apropos"
+            <LinearLayout
+                android:id="@+id/detail_candidat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="45dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="45dp"
-                android:padding="13dp"
-                android:text="Description  du candidat"
-                android:textSize="22dp" />
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="80dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/candidatures_titre"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="45dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="45dp"
-                android:padding="13dp"
-                android:text="Candidatures en attente "
-                android:textColor="#02C37e"
-                android:textSize="22dp" />
+                <TextView
+                    android:id="@+id/apropos_titre"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="45dp"
+                    android:padding="3dp"
+                    android:text="A propos"
+                    android:textColor="#02C37e"
+                    android:textSize="22dp" />
 
-            <TextView
-                android:id="@+id/candidatures"
-                android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/apropos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+
+                    android:layout_marginRight="0dp"
+                    android:padding="13dp"
+                    android:text="Description du candidat"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:id="@+id/btn_cv"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#02C37e"
+                    android:text="Consulter mon cv"
+                    android:textColor="#FFFFFF" />
+
+
+                <Button
+                    android:id="@+id/btn_voircandidatures"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#02C37e"
+                    android:text="Mes candidatures"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_voirmissions"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#02C37e"
+                    android:text="Mes missions"
+                    android:textColor="#FFFFFF" />
+
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_deconnexion"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="45dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="45dp"
-                android:padding="13dp"
-                android:text="liste candidatures "
-                android:textSize="22dp" />
+                android:layout_gravity="center_horizontal"
+
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#ED5C6F"
+                android:text="Me déconnecter"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
-
     </ScrollView>
+
+    <!-- Footer avec trois images et textes alignés horizontalement -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_alignParentBottom="true"
+        android:background="#E1D9D9">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/logomsg"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Message"
+                android:src="@drawable/msglogo" />
+
+            <TextView
+                android:id="@+id/textmsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Messages"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/logorecherche"
+                android:layout_width="66dp"
+                android:layout_height="53dp"
+                android:clickable="true"
+                android:contentDescription="Recherche"
+                android:focusable="true"
+                android:src="@drawable/recherche" />
+
+            <TextView
+                android:id="@+id/textrechercher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Offres"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/logoprofil"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Profil"
+                android:src="@drawable/profil" />
+
+            <TextView
+                android:id="@+id/textprofil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profil"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>
-
-
-
-

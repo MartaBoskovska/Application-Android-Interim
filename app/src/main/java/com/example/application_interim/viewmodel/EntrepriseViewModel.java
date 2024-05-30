@@ -3,7 +3,6 @@ package com.example.application_interim.viewmodel;
 import androidx.lifecycle.LiveData;
 
 import com.example.application_interim.repositories.EntrepriseRepository;
-import com.example.application_interim.repositories.UtilisateurRepository;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.HashMap;
