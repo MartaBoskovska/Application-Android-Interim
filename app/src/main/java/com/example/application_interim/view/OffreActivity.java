@@ -1,6 +1,8 @@
 package com.example.application_interim.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.application_interim.R;
 
 public class OffreActivity extends AppCompatActivity {
+
+    private String offreID;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +26,8 @@ public class OffreActivity extends AppCompatActivity {
         TextView profil = findViewById(R.id.profil);
 
         // Recuperer les donnees de l'offre
+        offreID = getIntent().getStringExtra("offreID");
+        userId = getIntent().getStringExtra("userId");
         String titreOffre = getIntent().getStringExtra("titre");
         String localisationOffre = getIntent().getStringExtra("localisation");
         String descriptionOffre = getIntent().getStringExtra("description");
@@ -33,5 +40,16 @@ public class OffreActivity extends AppCompatActivity {
         description.setText(descriptionOffre);
         missions.setText(missionsOffre);
         profil.setText(profilOffre);
+
+
+        Button buttonPostuler = findViewById(R.id.postuler);
+
+        buttonPostuler.setOnClickListener(v -> {
+            // Rediriger vers la page de candidature
+            Intent intent = new Intent(OffreActivity.this, CandidaterActivity.class);
+            intent.putExtra("offreID", offreID);
+            intent.putExtra("userId", userId);
+            startActivity(intent);
+        });
     }
 }

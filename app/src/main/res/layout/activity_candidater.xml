@@ -138,9 +138,9 @@ tools:context=".view.CandidaterActivity">
             android:padding="13dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:inputType="none"
+            android:inputType="text"
             android:clickable="true"
-            android:focusable="false"/>
+            />
 
 
         <EditText

@@ -31,6 +31,8 @@ public class RechercheOffreActivity extends AppCompatActivity {
 
     EditText editTextQuoi, editQuand, editTextOu;
     ListView listViewQuoi, listViewOu;
+
+    String userId;
     String[] valuesQuoi = {
             "Equipier",
             "Menage",
@@ -54,12 +56,19 @@ public class RechercheOffreActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("RechercheOffreActivity", "onCreate");
+        if (getIntent().getExtras() != null) {
+            userId = getIntent().getStringExtra("USER_ID");
+            Log.i("USER_ID RechercheOffreActivity", userId);
+        }
         setContentView(R.layout.activity_recherche_offre);
         listViewQuoi = findViewById(R.id.listViewQuoi);
         editTextQuoi = findViewById(R.id.editTextQuoi);
 
         listViewOu = findViewById(R.id.listViewOu);
         editTextOu = findViewById(R.id.editTextOu);
+
+
 
 
         ArrayAdapter<String> adapterQuoi = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, valuesQuoi);
@@ -131,7 +140,10 @@ public class RechercheOffreActivity extends AppCompatActivity {
                 searchData.put("date", date);
                 searchData.put("region", region);
 
+
+
                 Intent intent = new Intent(RechercheOffreActivity.this, AffichageOffreActivity.class);
+                intent.putExtra("USER_ID", userId);
                 intent.putExtra("searchdata", (Serializable) searchData);
                 startActivity(intent);
             }
