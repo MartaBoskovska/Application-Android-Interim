@@ -23,12 +23,12 @@ public class OffreViewModel extends ViewModel {
         this.activity = activity;
     }
 
-    public void getListeOffres(String intitule, String date, String region) {
+    public void getListeOffres(String intitule, String date, String ville) {
 
         Map<String, String> searchData = new HashMap<>();
         searchData.put("intitule", intitule);
         searchData.put("date", date);
-        searchData.put("region", region);
+        searchData.put("ville", ville);
 
 
         List<Map<String, Object>> offresData = offreRepository.getOffres(searchData, this);

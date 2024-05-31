@@ -2,6 +2,7 @@ package com.example.application_interim.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +23,9 @@ public class CandidaterActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_candidater);
 
+        String titre = getIntent().getStringExtra("titreOffre");
+        TextView titreOffre = findViewById(R.id.titre_offre);
+        titreOffre.setText(titre);
         Button buttonCandidater = findViewById(R.id.envoyer);
         buttonCandidater.setOnClickListener(v -> {
 
@@ -33,12 +37,12 @@ public class CandidaterActivity extends AppCompatActivity {
 
             String offreID = getIntent().getStringExtra("offreID");
             String userId = getIntent().getStringExtra("userId");
-            String titreOffre = getIntent().getStringExtra("titreOffre");
+
 
             creationCandidatureViewModel = new CreationCandidatureViewModel();
             CandidaterActivity that = CandidaterActivity.this;
 
-            LiveData<Boolean> success = creationCandidatureViewModel.addCandidature(offreID, userId, titreOffre, prenom.getText().toString(), nom.getText().toString(), nationality.getText().toString(), date.getText().toString(), lettreDeMotivation.getText().toString());
+            LiveData<Boolean> success = creationCandidatureViewModel.addCandidature(offreID, userId, titre, prenom.getText().toString(), nom.getText().toString(), nationality.getText().toString(), date.getText().toString(), lettreDeMotivation.getText().toString());
             success.observe(that, aBoolean -> {
                 if (aBoolean) {
                     Toast.makeText(that, "Candidature ajoutée", Toast.LENGTH_SHORT).show();

@@ -36,8 +36,10 @@ public class OffreRepository {
                 QuerySnapshot queryDocumentSnapshots = task.getResult();
                 if (queryDocumentSnapshots != null) {
                     for (QueryDocumentSnapshot offre : queryDocumentSnapshots) {
-                        Log.d("OFFRE", offre.getData().toString());
-                        if (offre.getString("intitule").equals(searchItems.get("intitule")) && offre.getString("region").equals(searchItems.get("region")) && offre.getString("publicationDate").equals(searchItems.get("date"))) {
+                        Log.d("INTITULE",searchItems.get("intitule"));
+                        Log.d("DATE",offre.getData().toString());
+                        Log.d("VILLE",searchItems.get("date"));
+                        if (offre.getString("intitule").equals(searchItems.get("intitule")) && offre.getString("city").equals(searchItems.get("ville")) && offre.getString("publicationDate").equals(searchItems.get("date"))) {
                             Map<String, Object> map = offre.getData();
                             map.put("offreID", offre.getId());
                             Log.w("OFFRE", map.toString());
@@ -75,12 +77,9 @@ public class OffreRepository {
                     for (QueryDocumentSnapshot offre : queryDocumentSnapshots) {
                         Map<String, Object> map = offre.getData();
                         map.put("offreID", offre.getId());
-                        Log.w("OFFRE", map.toString());
                         this.allOffers.add(map);
-                        Log.d("OFFRE", map.toString());
                         offers.getValue().add(map);
                         candidatureViewModel.addOffre(map);
-                        Log.w("OFFRE", offers.getValue().toString());
                     }
                     candidatureViewModel.onEndQueryEntreprises();
                 }

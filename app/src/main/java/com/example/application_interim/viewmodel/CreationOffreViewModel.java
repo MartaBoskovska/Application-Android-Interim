@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class CreationOffreViewModel extends ViewModel {
     private OffreRepository offreRepository = new OffreRepository();
-    public LiveData<Boolean> addOffre(String pays, String region, String ville, String intitule, String typeContrat, String remuneration, String description,String secteur, String entreprise, String missions, String profil) {
+    public LiveData<Boolean> addOffre(String pays, String region, String ville, String intitule, String titreOffre, String typeContrat, String remuneration, String description,String secteur, String entreprise, String missions, String profil) {
         Map<String, Object> docData = new HashMap<>();
         docData.put("country", pays);
         docData.put("region", region);
@@ -24,6 +24,7 @@ public class CreationOffreViewModel extends ViewModel {
         docData.put("description", description);
         docData.put("missions", missions);
         docData.put("profil", profil);
+        docData.put("title", titreOffre);
         return offreRepository.addOffre(docData);
     }
 }

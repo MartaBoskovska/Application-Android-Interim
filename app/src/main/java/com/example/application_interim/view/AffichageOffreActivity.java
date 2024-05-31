@@ -31,10 +31,10 @@ public class AffichageOffreActivity extends AppCompatActivity {
             this.offreViewModel = new OffreViewModel(this);
             String intitule = extra.get("intitule");
             String date = extra.get("date");
-            String region = extra.get("region");
+            String ville = extra.get("ville");
             this.userId = (String) intent.getExtras().get("USER_ID");
             Log.d("AffichageOffreActivity", "userId: " + this.userId);
-            offreViewModel.getListeOffres(intitule, date, region);
+            offreViewModel.getListeOffres(intitule, date, ville);
             List<Map<String, Object>> offreData = offreViewModel.getOffresData();
 
         }
@@ -52,7 +52,7 @@ public class AffichageOffreActivity extends AppCompatActivity {
             Log.e("AffichageOffreActivityOffre", offre.get("offreID").toString());
             String titre = (String) offre.get("title");
             String date = (String) offre.get("publicationDate");
-            String lieu = (String) offre.get("region");
+            String lieu = (String) offre.get("ville");
             String typeContrat = (String) offre.get("contract");
             String description = (String) offre.get("description");
             String missions = (String) offre.get("missions");
