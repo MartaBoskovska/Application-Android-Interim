@@ -2,6 +2,7 @@ package com.example.application_interim.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -47,6 +48,7 @@ public class OffreActivity extends AppCompatActivity {
         buttonPostuler.setOnClickListener(v -> {
             // Rediriger vers la page de candidature
             Intent intent = new Intent(OffreActivity.this, CandidaterActivity.class);
+            intent.putExtra("titreOffre", titreOffre);
             intent.putExtra("offreID", offreID);
             intent.putExtra("userId", userId);
             startActivity(intent);

@@ -31,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
         dataBaseReference = FirebaseDatabase.getInstance().getReference("this is the path");
         dataBaseReference.setValue("Database Firebase").addOnSuccessListener(this, aVoid -> {
-            Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
+            Log.d("MainActivity", "Success");
         }).addOnFailureListener(this, e -> {
-            Toast.makeText(this, "Failure", Toast.LENGTH_SHORT).show();
+            Log.d("MainActivity", "Failure");
         }).addOnCompleteListener(this, task -> {
-            Toast.makeText(this, "Complete", Toast.LENGTH_SHORT).show();
+            Log.d("MainActivity", "Complete");
         });
 
 

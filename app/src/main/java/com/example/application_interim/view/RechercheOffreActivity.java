@@ -130,7 +130,7 @@ public class RechercheOffreActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Récupérer les valeurs des EditText
                 String intitule = editTextQuoi.getText().toString();
-                String region = editTextOu.getText().toString();
+                String ville = editTextOu.getText().toString();
                 String date = editQuand.getText().toString();
 
                 // Rechercher les offres correspondantes
@@ -138,7 +138,7 @@ public class RechercheOffreActivity extends AppCompatActivity {
                 Map<String, String> searchData = new HashMap<>();
                 searchData.put("intitule", intitule);
                 searchData.put("date", date);
-                searchData.put("region", region);
+                searchData.put("ville", ville);
 
 
 

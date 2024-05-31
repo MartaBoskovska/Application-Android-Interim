@@ -37,8 +37,10 @@ public class CreationOffreActivity extends AppCompatActivity {
             EditText secteurEditText = findViewById(R.id.secteurEditText);
             EditText typeContratEditText = findViewById(R.id.typeContratEditText);
             EditText remunerationEditText = findViewById(R.id.remunerationEditText);
-
             EditText descriptionEditText = findViewById(R.id.descriptionEditText);
+            EditText missionsEditText = findViewById(R.id.missionsEditText);
+            EditText profilEditText = findViewById(R.id.profilEditText);
+            EditText titreEditText = findViewById(R.id.titreEditText);
 
             Button buttonCreation = findViewById(R.id.button_add_offer);
             buttonCreation.setOnClickListener(new View.OnClickListener() {
@@ -54,9 +56,13 @@ public class CreationOffreActivity extends AppCompatActivity {
                     String remuneration = remunerationEditText.getText().toString();
 
                     String description = descriptionEditText.getText().toString();
+                    String missions = missionsEditText.getText().toString();
+                    String profil = profilEditText.getText().toString();
+                    String titreOffre = titreEditText.getText().toString();
+
                     String entreprise = CreationOffreActivity.this.entrepriseID;
                     CreationOffreActivity that = CreationOffreActivity.this;
-                    LiveData<Boolean> success = offreViewModel.addOffre(pays, region, ville, intitule, typeContrat, remuneration, description, secteur, entreprise);
+                    LiveData<Boolean> success = offreViewModel.addOffre(pays, region, ville, intitule, titreOffre, typeContrat, remuneration, description, secteur, entreprise, missions, profil);
                     success.observe(that, aBoolean -> {
                         if (aBoolean) {
                             Toast.makeText(CreationOffreActivity.this, "Offre ajoutée", Toast.LENGTH_SHORT).show();

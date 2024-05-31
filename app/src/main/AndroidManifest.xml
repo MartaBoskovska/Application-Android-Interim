@@ -67,6 +67,10 @@
             android:name=".view.CreationOffreActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".view.AffichageCandidaturesActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>

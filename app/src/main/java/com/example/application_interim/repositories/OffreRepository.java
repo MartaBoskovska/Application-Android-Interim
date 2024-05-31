@@ -6,6 +6,7 @@ import android.widget.Toast;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.application_interim.viewmodel.CandidatureViewModel;
 import com.example.application_interim.viewmodel.OffreViewModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,6 +23,7 @@ public class OffreRepository {
 
     private final FirebaseFirestore firestore;
     private List<Map<String, Object>> matchingOffers = new ArrayList<>();
+    private List<Map<String, Object>> allOffers = new ArrayList<>();
 
     public OffreRepository() {
         firestore = FirebaseFirestore.getInstance();
@@ -34,26 +36,22 @@ public class OffreRepository {
                 QuerySnapshot queryDocumentSnapshots = task.getResult();
                 if (queryDocumentSnapshots != null) {
                     for (QueryDocumentSnapshot offre : queryDocumentSnapshots) {
-                        Log.d("OFFRE", offre.getData().toString());
-                        if (offre.getString("intitule").equals(searchItems.get("intitule")) &&
-                                offre.getString("region").equals(searchItems.get("region")) &&
-                                offre.getString("publicationDate").equals(searchItems.get("date"))) {
+                        Log.d("INTITULE",searchItems.get("intitule"));
+                        Log.d("DATE",offre.getData().toString());
+                        Log.d("VILLE",searchItems.get("date"));
+                        if (offre.getString("intitule").equals(searchItems.get("intitule")) && offre.getString("city").equals(searchItems.get("ville")) && offre.getString("publicationDate").equals(searchItems.get("date"))) {
                             Map<String, Object> map = offre.getData();
                             map.put("offreID", offre.getId());
                             Log.w("OFFRE", map.toString());
                             this.matchingOffers.add(map);
-                            Log.w("matchingOffers", map.toString());
-                            Log.d("matchingOffersssss", matchingOffers.toString());
                         }
                     }
                     offreViewModel.onEndQuery();
                 }
             } else {
                 Log.e("ERROR_GET_OFFERS", "Error getting documents: ", task.getException());
-
             }
         });
-        Log.d("matchingOffers2", matchingOffers.toString());
         return matchingOffers;
     }
 
@@ -69,6 +67,27 @@ public class OffreRepository {
         return success;
     }
 
-
+    public LiveData<List<Map<String, Object>>> getAllOffers(CandidatureViewModel candidatureViewModel) {
+        Log.d("OFFRE", "getAllOffers");
+        LiveData<List<Map<String, Object>>> offers = new MutableLiveData<>(new ArrayList<>());
+        firestore.collection("offers").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot queryDocumentSnapshots = task.getResult();
+                if (queryDocumentSnapshots != null) {
+                    for (QueryDocumentSnapshot offre : queryDocumentSnapshots) {
+                        Map<String, Object> map = offre.getData();
+                        map.put("offreID", offre.getId());
+                        this.allOffers.add(map);
+                        offers.getValue().add(map);
+                        candidatureViewModel.addOffre(map);
+                    }
+                    candidatureViewModel.onEndQueryEntreprises();
+                }
+            } else {
+                Log.e("ERROR_GET_OFFERS", "Error getting documents: ", task.getException());
+            }
+        });
+        return offers;
+    }
 
 }
