@@ -17,6 +17,7 @@ public class CompteUtilisateurActivity extends AppCompatActivity {
 
     private TextView nomUtilisateurText,localisationText,aproposText;
     private UtilisateurViewModel utilisateurViewModel;
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,10 +78,14 @@ public class CompteUtilisateurActivity extends AppCompatActivity {
         });
 
         // Récupérer l'ID de l'utilisateur à partir de l'intent
-        /*
+
         if (utilisateurViewModel.getUserId() != null) {
+            Intent intent = getIntent();
+            if (intent != null && intent.hasExtra("USER_ID")) {
+                userId = intent.getStringExtra("USER_ID");
+            }
             FirebaseFirestore db = FirebaseFirestore.getInstance();
-            DocumentReference docRef = db.collection("users").document("ku1JzmVL1pSYDKM3h7xE");
+            DocumentReference docRef = db.collection("users").document(userId);
 
             docRef.get().addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
@@ -112,6 +117,6 @@ public class CompteUtilisateurActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "User ID not found", Toast.LENGTH_SHORT).show();
         }
-    }*/
+
     }
 }
