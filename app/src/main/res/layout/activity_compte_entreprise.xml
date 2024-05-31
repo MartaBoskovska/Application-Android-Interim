@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Entreprise"
-        android:textSize="18sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:layout_marginTop="8dp"
         android:gravity="center" />
@@ -73,6 +73,14 @@
             android:text="Vous êtes à la recherche d’un secteur qui recrute et vous souhaitez intégrer un grand groupe international et dynamique qui place ses collaborateurs au centre de ses préoccupations ? Alors, rejoignez le Groupe Crédit Agricole !"
             android:layout_marginTop="8dp" />
 
+        <Button
+            android:id="@+id/btn_creer_offre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#02C37e"
+            android:text="CRÉER UNE NOUVELLE OFFRE"
+            android:textColor="#FFFFFF"/>
         <!-- Applications to Process Section -->
         <TextView
             android:layout_width="match_parent"
@@ -90,6 +98,7 @@
             android:layout_marginTop="32dp"/>
 
         <TextView
+            android:id="@+id/autreCandidatures"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/autre_candidature"

@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class CreationOffreViewModel extends ViewModel {
     private OffreRepository offreRepository = new OffreRepository();
-    public LiveData<Boolean> addOffre(String pays, String region, String ville, String intitule, String typeContrat, String remuneration, String description,String secteur, String entreprise) {
+    public LiveData<Boolean> addOffre(String pays, String region, String ville, String intitule, String typeContrat, String remuneration, String description,String secteur, String entreprise, String missions, String profil) {
         Map<String, Object> docData = new HashMap<>();
         docData.put("country", pays);
         docData.put("region", region);
@@ -22,6 +22,8 @@ public class CreationOffreViewModel extends ViewModel {
         docData.put("publicationDate", "20/2/2024"); // Add the publication date to the offer (to know when the offer was published)
         docData.put("remuneration", remuneration);
         docData.put("description", description);
+        docData.put("missions", missions);
+        docData.put("profil", profil);
         return offreRepository.addOffre(docData);
     }
 }

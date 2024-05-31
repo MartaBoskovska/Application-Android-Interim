@@ -48,6 +48,9 @@
     <string name="description1">Description</string>
     <string name="ville_r_gion">Ville , région</string>
     <string name="titre_offre">TITRE OFFRE</string>
+    <string name="accepter">Accepter</string>
+    <string name="refuser">Refuser</string>
+    <string name="consulter">Consulter</string>
 
 
 </resources>

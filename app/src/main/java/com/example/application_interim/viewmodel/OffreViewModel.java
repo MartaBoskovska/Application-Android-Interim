@@ -2,6 +2,8 @@ package com.example.application_interim.viewmodel;
 
 import android.util.Log;
 
+import androidx.lifecycle.ViewModel;
+
 import com.example.application_interim.repositories.OffreRepository;
 import com.example.application_interim.view.AffichageOffreActivity;
 
@@ -10,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class OffreViewModel {
+public class OffreViewModel extends ViewModel {
 
     private OffreRepository offreRepository = new OffreRepository();
     private List<Map<String, Object>> offresData;

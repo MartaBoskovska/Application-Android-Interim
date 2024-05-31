@@ -12,20 +12,20 @@
         android:id="@+id/button_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="start"
         android:backgroundTint="#02C37e"
         android:text="@string/annuler"
-        android:textColor="@android:color/white"
-        android:layout_gravity="start" />
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/textView_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
         android:text="Créer une offre"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center" />
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageView_logo"
@@ -48,138 +48,176 @@
             android:padding="16dp">
 
 
-    <TextView
-        android:id="@+id/textView_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Localisation :"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp" />
+            <TextView
+                android:id="@+id/textView_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Localisation :"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/paysEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/edit_text_background"
-        android:hint="@string/pays"
-        android:layout_marginTop="8dp"
-        android:padding="13dp"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:inputType="text" />
+            <EditText
+                android:id="@+id/paysEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/edit_text_background"
+                android:hint="@string/pays"
+                android:inputType="text"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
-    <EditText
-        android:id="@+id/regionEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/edit_text_background"
-        android:hint="@string/region"
-        android:layout_marginTop="8dp"
-        android:padding="13dp"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:inputType="text" />
+            <EditText
+                android:id="@+id/regionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/edit_text_background"
+                android:hint="@string/region"
+                android:inputType="text"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
-    <EditText
-        android:id="@+id/villeEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@color/edit_text_background"
-        android:hint="@string/ville"
-        android:inputType="text"
-        android:padding="13dp"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp" />
+            <EditText
+                android:id="@+id/villeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/edit_text_background"
+                android:hint="@string/ville"
+                android:inputType="text"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
-    <TextView
-        android:id="@+id/textView_job_details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Détails du poste :"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp" />
+            <TextView
+                android:id="@+id/textView_job_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Détails du poste :"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/intituleEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/edit_text_background"
-        android:layout_marginTop="8dp"
-        android:padding="13dp"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:hint="Intitulé du poste"
-        android:inputType="text" />
-    <EditText
-        android:id="@+id/secteurEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/edit_text_background"
-        android:layout_marginTop="8dp"
-        android:padding="13dp"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:hint="Secteur"
-        android:inputType="text" />
+            <EditText
+                android:id="@+id/titreEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/edit_text_background"
+                android:hint="Titre de l’offre"
+                android:inputType="text"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+            <EditText
+                android:id="@+id/intituleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/edit_text_background"
+                android:hint="Intitulé du poste"
+                android:inputType="text"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
-    <EditText
-        android:id="@+id/typeContratEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/edit_text_background"
-        android:layout_marginTop="8dp"
-        android:padding="13dp"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:hint="@string/type_de_contrat"
-        android:inputType="text" />
+            <EditText
+                android:id="@+id/secteurEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/edit_text_background"
+                android:hint="Secteur"
+                android:inputType="text"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
-    <EditText
-        android:id="@+id/remunerationEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/edit_text_background"
-        android:hint="@string/remuneration"
-        android:layout_marginTop="8dp"
-        android:padding="13dp"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:inputType="text" />
+            <EditText
+                android:id="@+id/typeContratEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/edit_text_background"
+                android:hint="@string/type_de_contrat"
+                android:inputType="text"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
-    <TextView
-        android:id="@+id/textView_offer_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="Description de l’offre :"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp" />
+            <EditText
+                android:id="@+id/remunerationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/edit_text_background"
+                android:hint="@string/remuneration"
+                android:inputType="text"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
-    <EditText
-        android:id="@+id/descriptionEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/edit_text_background"
-        android:layout_marginTop="8dp"
-        android:padding="13dp"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:hint="@string/description"
-        android:inputType="textMultiLine"
-        android:lines="4" />
+            <TextView
+                android:id="@+id/textView_offer_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Description de l’offre :"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/edit_text_background"
+                android:hint="Veuillez décrire brièvement le poste ici"
+                android:inputType="textMultiLine"
+                android:lines="2"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <EditText
+                android:id="@+id/missionsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/edit_text_background"
+                android:hint="Veuillez décrire ici les missions du poste."
+                android:inputType="textMultiLine"
+                android:lines="2"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <EditText
+                android:id="@+id/profilEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/edit_text_background"
+                android:hint="Veuillez décrire ici le profil recherché pour ce poste"
+                android:inputType="textMultiLine"
+                android:lines="2"
+                android:padding="13dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
 
 
             <Button
                 android:id="@+id/button_add_offer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:backgroundTint="#02C37e"
                 android:text="@string/ajouter_nouvelle_offre"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="16dp" />
+                android:textColor="@android:color/white" />
         </LinearLayout>
     </ScrollView>
 

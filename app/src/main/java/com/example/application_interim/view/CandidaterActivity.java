@@ -10,11 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 
 import com.example.application_interim.R;
-import com.example.application_interim.viewmodel.CandidatureViewModel;
+import com.example.application_interim.viewmodel.CreationCandidatureViewModel;
 
 public class CandidaterActivity extends AppCompatActivity {
 
-    CandidatureViewModel candidatureViewModel;
+    CreationCandidatureViewModel creationCandidatureViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +33,12 @@ public class CandidaterActivity extends AppCompatActivity {
 
             String offreID = getIntent().getStringExtra("offreID");
             String userId = getIntent().getStringExtra("userId");
+            String titreOffre = getIntent().getStringExtra("titreOffre");
 
-            candidatureViewModel = new CandidatureViewModel();
+            creationCandidatureViewModel = new CreationCandidatureViewModel();
             CandidaterActivity that = CandidaterActivity.this;
 
-            LiveData<Boolean> success = candidatureViewModel.addCandidature(offreID, userId, prenom.getText().toString(), nom.getText().toString(), nationality.getText().toString(), date.getText().toString(), lettreDeMotivation.getText().toString());
+            LiveData<Boolean> success = creationCandidatureViewModel.addCandidature(offreID, userId, titreOffre, prenom.getText().toString(), nom.getText().toString(), nationality.getText().toString(), date.getText().toString(), lettreDeMotivation.getText().toString());
             success.observe(that, aBoolean -> {
                 if (aBoolean) {
                     Toast.makeText(that, "Candidature ajoutée", Toast.LENGTH_SHORT).show();
