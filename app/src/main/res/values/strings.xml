@@ -38,6 +38,9 @@
     <string name="description">Décrire ici les missions du poste, les compétences requises</string>
     <string name="intitule_du_poste">Intitulé du poste</string>
     <string name="ajouter_nouvelle_offre">Ajouter une nouvelle offre</string>
+    <string name="candidature_apercu_default" >Candidature</string>
+    <string name="candidature_acceptee" >Candidatures acceptée(s)</string>
+    <string name="autre_candidature" ><u>Voir les autres candidatures ...</u></string>
     <string name="votre_profil">Votre profil :</string>
     <string name="description_missions">Description missions</string>
     <string name="postuler">POSTULER</string>

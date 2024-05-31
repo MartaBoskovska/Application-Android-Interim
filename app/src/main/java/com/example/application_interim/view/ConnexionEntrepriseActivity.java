@@ -58,11 +58,11 @@ public class ConnexionEntrepriseActivity extends AppCompatActivity {
                 userID.observe(that, id -> {
                             if (id != null) {
                                 Toast.makeText(that, "Connexion réussie", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(ConnexionEntrepriseActivity.this, CreationOffreActivity.class);
+                                Intent intent = new Intent(ConnexionEntrepriseActivity.this, CompteEntrepriseActivity.class);
                                 intent.putExtra("entrepriseID", id.getUid());
                                 startActivity(intent);
                             } else {
-                                Toast.makeText(that, "Veulliez entrer un email et un mot de passe valides", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(that, "Veuilliez entrer un email et un mot de passe valides", Toast.LENGTH_SHORT).show();
                             }
                         }
                 );
